@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C29E57513B514EC001F9928 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29E57413B514EC001F9928 /* UIKit.framework */; };
+		9C29E57713B514EC001F9928 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29E57613B514EC001F9928 /* Foundation.framework */; };
+		9C29E57913B514EC001F9928 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C29E57813B514EC001F9928 /* CoreGraphics.framework */; };
+		9C29E57F13B514EC001F9928 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C29E57D13B514EC001F9928 /* InfoPlist.strings */; };
+		9C29E58213B514EC001F9928 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29E58113B514EC001F9928 /* main.m */; };
+		9C29E58513B514EC001F9928 /* Snake_Oil_AppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29E58413B514EC001F9928 /* Snake_Oil_AppAppDelegate.m */; };
+		9C29E58813B514EC001F9928 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C29E58613B514EC001F9928 /* MainWindow.xib */; };
+		9C29E58B13B514EC001F9928 /* Snake_Oil_AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29E58A13B514EC001F9928 /* Snake_Oil_AppViewController.m */; };
+		9C29E58E13B514EC001F9928 /* Snake_Oil_AppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C29E58C13B514EC001F9928 /* Snake_Oil_AppViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9C29E57013B514EC001F9928 /* Snake Oil App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snake Oil App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C29E57413B514EC001F9928 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C29E57613B514EC001F9928 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C29E57813B514EC001F9928 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C29E57C13B514EC001F9928 /* Snake Oil App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Snake Oil App-Info.plist"; sourceTree = "<group>"; };
+		9C29E57E13B514EC001F9928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C29E58013B514EC001F9928 /* Snake Oil App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snake Oil App-Prefix.pch"; sourceTree = "<group>"; };
+		9C29E58113B514EC001F9928 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C29E58313B514EC001F9928 /* Snake_Oil_AppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snake_Oil_AppAppDelegate.h; sourceTree = "<group>"; };
+		9C29E58413B514EC001F9928 /* Snake_Oil_AppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Snake_Oil_AppAppDelegate.m; sourceTree = "<group>"; };
+		9C29E58713B514EC001F9928 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		9C29E58913B514EC001F9928 /* Snake_Oil_AppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snake_Oil_AppViewController.h; sourceTree = "<group>"; };
+		9C29E58A13B514EC001F9928 /* Snake_Oil_AppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Snake_Oil_AppViewController.m; sourceTree = "<group>"; };
+		9C29E58D13B514EC001F9928 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Snake_Oil_AppViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C29E56D13B514EC001F9928 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C29E57513B514EC001F9928 /* UIKit.framework in Frameworks */,
+				9C29E57713B514EC001F9928 /* Foundation.framework in Frameworks */,
+				9C29E57913B514EC001F9928 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C29E56513B514EC001F9928 = {
+			isa = PBXGroup;
+			children = (
+				9C29E57A13B514EC001F9928 /* Snake Oil App */,
+				9C29E57313B514EC001F9928 /* Frameworks */,
+				9C29E57113B514EC001F9928 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C29E57113B514EC001F9928 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C29E57013B514EC001F9928 /* Snake Oil App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C29E57313B514EC001F9928 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C29E57413B514EC001F9928 /* UIKit.framework */,
+				9C29E57613B514EC001F9928 /* Foundation.framework */,
+				9C29E57813B514EC001F9928 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C29E57A13B514EC001F9928 /* Snake Oil App */ = {
+			isa = PBXGroup;
+			children = (
+				9C29E58313B514EC001F9928 /* Snake_Oil_AppAppDelegate.h */,
+				9C29E58413B514EC001F9928 /* Snake_Oil_AppAppDelegate.m */,
+				9C29E58613B514EC001F9928 /* MainWindow.xib */,
+				9C29E58913B514EC001F9928 /* Snake_Oil_AppViewController.h */,
+				9C29E58A13B514EC001F9928 /* Snake_Oil_AppViewController.m */,
+				9C29E58C13B514EC001F9928 /* Snake_Oil_AppViewController.xib */,
+				9C29E57B13B514EC001F9928 /* Supporting Files */,
+			);
+			path = "Snake Oil App";
+			sourceTree = "<group>";
+		};
+		9C29E57B13B514EC001F9928 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C29E57C13B514EC001F9928 /* Snake Oil App-Info.plist */,
+				9C29E57D13B514EC001F9928 /* InfoPlist.strings */,
+				9C29E58013B514EC001F9928 /* Snake Oil App-Prefix.pch */,
+				9C29E58113B514EC001F9928 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C29E56F13B514EC001F9928 /* Snake Oil App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C29E59113B514EC001F9928 /* Build configuration list for PBXNativeTarget "Snake Oil App" */;
+			buildPhases = (
+				9C29E56C13B514EC001F9928 /* Sources */,
+				9C29E56D13B514EC001F9928 /* Frameworks */,
+				9C29E56E13B514EC001F9928 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Snake Oil App";
+			productName = "Snake Oil App";
+			productReference = 9C29E57013B514EC001F9928 /* Snake Oil App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C29E56713B514EC001F9928 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9C29E56A13B514EC001F9928 /* Build configuration list for PBXProject "Snake Oil App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9C29E56513B514EC001F9928;
+			productRefGroup = 9C29E57113B514EC001F9928 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C29E56F13B514EC001F9928 /* Snake Oil App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C29E56E13B514EC001F9928 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C29E57F13B514EC001F9928 /* InfoPlist.strings in Resources */,
+				9C29E58813B514EC001F9928 /* MainWindow.xib in Resources */,
+				9C29E58E13B514EC001F9928 /* Snake_Oil_AppViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C29E56C13B514EC001F9928 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C29E58213B514EC001F9928 /* main.m in Sources */,
+				9C29E58513B514EC001F9928 /* Snake_Oil_AppAppDelegate.m in Sources */,
+				9C29E58B13B514EC001F9928 /* Snake_Oil_AppViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9C29E57D13B514EC001F9928 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C29E57E13B514EC001F9928 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9C29E58613B514EC001F9928 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C29E58713B514EC001F9928 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		9C29E58C13B514EC001F9928 /* Snake_Oil_AppViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C29E58D13B514EC001F9928 /* en */,
+			);
+			name = Snake_Oil_AppViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C29E58F13B514EC001F9928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		9C29E59013B514EC001F9928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		9C29E59213B514EC001F9928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Snake Oil App/Snake Oil App-Prefix.pch";
+				INFOPLIST_FILE = "Snake Oil App/Snake Oil App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9C29E59313B514EC001F9928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Snake Oil App/Snake Oil App-Prefix.pch";
+				INFOPLIST_FILE = "Snake Oil App/Snake Oil App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C29E56A13B514EC001F9928 /* Build configuration list for PBXProject "Snake Oil App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C29E58F13B514EC001F9928 /* Debug */,
+				9C29E59013B514EC001F9928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C29E59113B514EC001F9928 /* Build configuration list for PBXNativeTarget "Snake Oil App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C29E59213B514EC001F9928 /* Debug */,
+				9C29E59313B514EC001F9928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C29E56713B514EC001F9928 /* Project object */;
+}
