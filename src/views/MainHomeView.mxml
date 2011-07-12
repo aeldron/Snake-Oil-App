@@ -7,7 +7,7 @@
 			import spark.core.SpriteVisualElement;
 			import spark.effects.easing.Elastic;
 
-			private var background:Sprite = new Sprite();
+			private var background:SpriteVisualElement = new SpriteVisualElement();
 
 			private function init():void {
 				trace(group.width);
@@ -30,27 +30,22 @@
 				background.graphics.beginGradientFill(GradientType.LINEAR, colors, alphas, ratios, matrix, spreadMethod);
 				background.graphics.drawRect(0, 0, width, height);
 
-				var mask:Sprite = new Sprite();
+				var mask:SpriteVisualElement = new SpriteVisualElement();
 				for (var i:int = 0; i < 20; i++) {
-					var x:int = Math.random() * width;
-					var y:int = Math.random() * height;
+
 					var radius:int = (Math.random() * 50) + 10;
-					var circle:Sprite = new Sprite();
+					var circle:SpriteVisualElement = new SpriteVisualElement();
 					circle.graphics.beginFill(0x000000, 1);
 					circle.graphics.drawCircle(0, 0, radius);
-
-
-					var circleSVE:SpriteVisualElement = new SpriteVisualElement();
-					circleSVE.addChild(circle);
-					circleSVE.x = x;
-					circleSVE.y = y;
-					circleSVE.addEventListener(MouseEvent.MOUSE_DOWN, circleMouseDown);
-					circleSVE.addEventListener(MouseEvent.MOUSE_UP, circleMouseUp);
+					circle.x = Math.random() * width;
+					circle.y = Math.random() * height;
+					circle.addEventListener(MouseEvent.MOUSE_DOWN, circleMouseDown);
+					circle.addEventListener(MouseEvent.MOUSE_UP, circleMouseUp);
 
 					// http://www.actionscript.org/forums/showthread.php3?t=261075
-					circleSVE.buttonMode = true;
+					circle.buttonMode = true;
 
-					mask.addChild(circleSVE);
+					mask.addChild(circle);
 				}
 				
 
@@ -59,14 +54,14 @@
 //				mask.buttonMode = true;
 				background.mask = mask;
 
-				var maskSVE:SpriteVisualElement = new SpriteVisualElement();
-				maskSVE.addChild(background);
+				//var maskSVE:SpriteVisualElement = new SpriteVisualElement();
+				//maskSVE.addChild(background);
 
 				// http://livedocs.adobe.com/flex/3/html/help.html?content=05_Display_Programming_28.html
 				/* ...However, if you want the mask object to scale when the Stage is scaled or if you want to enable user interaction with the mask (such as user-controlled dragging and resizing), the mask object must be added to the display list. The actual z-index (front-to-back order) of the display objects doesn't matter, as long as the mask object is added to the display list. (The mask object will not appear on the screen except as a mask.) */
-				maskSVE.addChild(mask);
+				background.addChild(mask);
 
-				addElement(maskSVE);
+				addElement(background);
 			}
 
 			private function circleMouseDown(e:MouseEvent):void {
