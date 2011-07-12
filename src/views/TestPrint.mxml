@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="init()">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.printing.FlexPrintJob;
+			private function init():void {
+				var colors:Array;
+				var alphas:Array;
+				var ratios:Array;
+				var matrix:Matrix;
+				var spreadMethod:String;
+				
+				// Create the gradient background:
+				colors = [0xff0000, 0x00ff00, 0x0000ff];
+				alphas = [1, 1, 1];
+				ratios = [0x00, 0x80, 0xff];
+				matrix = new Matrix();
+				matrix.createGradientBox(background.width, background.height, (Math.PI / 2), 0, 0);
+				spreadMethod = SpreadMethod.REFLECT;
+				for (var i:int = 0; i < 100; i++) {
+					var circleBorderContainer:BorderContainer = new BorderContainer();
+					circleBorderContainer.graphics.beginGradientFill(GradientType.LINEAR, colors, alphas, ratios, matrix, spreadMethod);
+					circleBorderContainer.graphics.drawCircle(Math.random() * background.width, Math.random() * background.height, Math.random()*90 + 10);
+					circleBorderContainer.addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);
+					circleBorderContainer.addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);
+					addElement(circleBorderContainer);
+				}
+			}
+			
+			private function mouseOverHandler(e:MouseEvent):void {
+				(e.currentTarget as BorderContainer).scaleX = 2;
+				(e.currentTarget as BorderContainer).scaleY = 2;
+			}
+			private function mouseOutHandler(e:MouseEvent):void {
+				(e.currentTarget as BorderContainer).scaleX = 0.5;
+				(e.currentTarget as BorderContainer).scaleY = 0.5;
+				
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+
+	<s:BorderContainer width="100%" height="100%" backgroundColor="0xff0000"/>
+	<s:BorderContainer id="background" width="100%" height="100%" x="0" y="0"/>
+	<s:Button label="Print"/>
+	
+</s:View>

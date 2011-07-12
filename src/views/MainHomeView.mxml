@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="HomeView"
+		creationComplete="init()">
+	<fx:Script>
+		<![CDATA[
+			import spark.core.SpriteVisualElement;
+			import spark.effects.easing.Elastic;
+
+			private var background:Sprite = new Sprite();
+
+			private function init():void {
+				trace(group.width);
+				var width:int = 600;
+				var height:int = 1000;
+				
+				var colors:Array;
+				var alphas:Array;
+				var ratios:Array;
+				var matrix:Matrix;
+				var spreadMethod:String;
+				
+				// Create the gradient background:
+				colors = [0xff0000, 0x00ff00, 0x0000ff];
+				alphas = [1, 1, 1];
+				ratios = [0x00, 0x80, 0xff];
+				matrix = new Matrix();
+				spreadMethod = SpreadMethod.REFLECT;
+				matrix.createGradientBox(width, height, (Math.PI / 2), 0, 0);
+				background.graphics.beginGradientFill(GradientType.LINEAR, colors, alphas, ratios, matrix, spreadMethod);
+				background.graphics.drawRect(0, 0, width, height);
+
+				var mask:Sprite = new Sprite();
+				for (var i:int = 0; i < 20; i++) {
+					var x:int = Math.random() * width;
+					var y:int = Math.random() * height;
+					var radius:int = (Math.random() * 50) + 10;
+					var circle:Sprite = new Sprite();
+					circle.graphics.beginFill(0x000000, 1);
+					circle.graphics.drawCircle(0, 0, radius);
+
+
+					var circleSVE:SpriteVisualElement = new SpriteVisualElement();
+					circleSVE.addChild(circle);
+					circleSVE.x = x;
+					circleSVE.y = y;
+					circleSVE.addEventListener(MouseEvent.MOUSE_DOWN, circleMouseDown);
+					circleSVE.addEventListener(MouseEvent.MOUSE_UP, circleMouseUp);
+
+					// http://www.actionscript.org/forums/showthread.php3?t=261075
+					circleSVE.buttonMode = true;
+
+					mask.addChild(circleSVE);
+				}
+				
+
+				// http://danny-t.co.uk/index.php/2010/05/02/flex-mask-and-move-effect/
+				//mask.cacheAsBitmap = true;
+//				mask.buttonMode = true;
+				background.mask = mask;
+
+				var maskSVE:SpriteVisualElement = new SpriteVisualElement();
+				maskSVE.addChild(background);
+
+				// http://livedocs.adobe.com/flex/3/html/help.html?content=05_Display_Programming_28.html
+				/* ...However, if you want the mask object to scale when the Stage is scaled or if you want to enable user interaction with the mask (such as user-controlled dragging and resizing), the mask object must be added to the display list. The actual z-index (front-to-back order) of the display objects doesn't matter, as long as the mask object is added to the display list. (The mask object will not appear on the screen except as a mask.) */
+				maskSVE.addChild(mask);
+
+				addElement(maskSVE);
+			}
+
+			private function circleMouseDown(e:MouseEvent):void {
+				var scale:Scale = new Scale(e.currentTarget);
+				scale.duration = 1000;
+				scale.scaleXTo = 2;
+				scale.scaleYTo = 2;
+				scale.easer = new Elastic();
+				scale.play();
+				
+			}
+			private function circleMouseUp(e:MouseEvent):void {
+				var scale:Scale = new Scale(e.currentTarget);
+				scale.duration = 500;
+				scale.scaleXTo = 1;
+				scale.scaleYTo = 1;
+				scale.easer = new Elastic();
+				scale.play();
+				
+			}
+/*
+			private function init_old():void {
+				var width:int = 600;
+				var height:int = 1000;
+				
+				var colors:Array;
+				var alphas:Array;
+				var ratios:Array;
+				var matrix:Matrix;
+				var spreadMethod:String;
+				
+				// Create the gradient background:
+				colors = [0xff0000, 0x00ff00, 0x0000ff];
+				alphas = [1, 1, 1];
+				ratios = [0x00, 0x80, 0xff];
+				matrix = new Matrix();
+				spreadMethod = SpreadMethod.REFLECT;
+				
+				for (var i:int = 0; i < 50; i++) {
+					var x:int = Math.random() * width;
+					var y:int = Math.random() * height;
+					var radius:int = Math.random()*90 + 10;
+					matrix.createGradientBox(width, height, (Math.PI / 2), -x, -y);
+					var graphic:Sprite = new Sprite();
+					graphic.graphics.beginGradientFill(GradientType.LINEAR, colors, alphas, ratios, matrix, spreadMethod);
+					graphic.graphics.drawCircle(0, 0, radius);
+					graphic.mask
+					var sve:SpriteVisualElement = new SpriteVisualElement();
+					sve.x = x;
+					sve.y = y;
+					sve.addChild(graphic);
+					addElement(sve);
+					
+					sve.addEventListener(MouseEvent.MOUSE_DOWN, circleMouseOver);
+					sve.addEventListener(MouseEvent.MOUSE_UP, circleMouseOut);
+					
+				}
+			}
+
+			private function circleMouseOver(e:MouseEvent):void {
+				var scale:Scale = new Scale(e.currentTarget);
+				scale.duration = 1000;
+				scale.scaleXTo = 2;
+				scale.scaleYTo = 2;
+				scale.easer = new Elastic();
+				scale.play();
+				
+			}
+			private function circleMouseOut(e:MouseEvent):void {
+				var scale:Scale = new Scale(e.currentTarget);
+				scale.duration = 500;
+				scale.scaleXTo = 1;
+				scale.scaleYTo = 1;
+				scale.easer = new Elastic();
+				scale.play();
+				
+			}
+
+*/			
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				background.mask.x += 10;
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<s:Scale id="enlarge">
+			<s:easer>
+				<s:Bounce/>
+			</s:easer>
+		</s:Scale>
+	</fx:Declarations>
+	<!-- <s:SpriteVisualElement id="con" /> -->
+	<!--
+	<s:Graphic click="{el1.color=Math.random()*10000}" x="{Math.random()*100}" y="{Math.random()*100}">
+		<s:Ellipse width="50" height="50">
+			<s:stroke><s:SolidColorStroke scaleMode="normal"/></s:stroke>
+			<s:fill><s:SolidColor id="el1" color="0x123456"/></s:fill>
+		</s:Ellipse>
+	</s:Graphic>
+	-->
+	<!--
+	<s:Ellipse width="50" height="50" x="100" y="100">
+		<s:stroke><s:SolidColorStroke scaleMode="normal"/></s:stroke>
+		<s:fill><s:SolidColor id="el1" color="0x123456"/></s:fill>
+	</s:Ellipse>
+	-->
+	<s:Group id="group" width="100%" height="100%">
+		<s:Button click="button1_clickHandler(event)"/>
+	</s:Group>
+	
+</s:View>
